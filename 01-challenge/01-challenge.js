@@ -1,5 +1,4 @@
 import fs from 'fs';
-import chalk from 'chalk';
 import { logChallengeTitle, logSubmitCommand } from '../utils';
 
 const DATA_ATTRIBUTES = ['usr', 'eme', 'psw', 'age', 'loc', 'fll'];
@@ -11,7 +10,7 @@ const fileReduced = fs.readFileSync(fileReducedPath, 'utf-8');
 
 function countIncorrectUsers(usersFile) {
   const users = usersFile
-    .split('\n\n')
+    .split('\n\n') // assuming LF as end of line character
     .map((user) => user.replaceAll('\n', ' ').split(/\s+/))
     .map((users) => Object.fromEntries(users.map((user) => user.split(':'))));
 
