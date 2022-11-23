@@ -36,7 +36,5 @@ export default function challenge04() {
 
   const { length, [55]: passwordToSend } = validPasswords;
 
-  if (passwordToSend !== '23555') throw new Error('Index 55 incorrect...');
-
   logSubmitCommand(`${length}-${passwordToSend}`);
 }
